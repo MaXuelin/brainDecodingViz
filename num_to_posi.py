@@ -6,16 +6,16 @@ Created on Sun Sep 26 09:07:26 2016
 """
 import sys
 name_of_layer = sys.argv[1]   #the name of layer
-index_of_nodes = int(sys.argv[2])  #the index of the nodes
+index_of_nodes = int(sys.argv[2])  #the index of the nodes, start from 0
 
 
 def div_MOD(struc_of_layer, index):
     [num_layers, num_row, num_column] = struc_of_layer    
     size_of_map = num_row*num_column
-    index_of_channels = index/size_of_map + 1 
+    index_of_channels = index/size_of_map #index of channels, strat from 0
     mod_of_index = index%size_of_map
-    index_row = mod_of_index/num_column + 1
-    index_column = mod_of_index%num_column
+    index_row = mod_of_index/num_column #index of row, start from 0
+    index_column = mod_of_index%num_column #index of column, start from 0
     
     return [index_of_channels,index_row,index_column]
 
